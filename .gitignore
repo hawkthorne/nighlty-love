@@ -1,1 +1,4 @@
 love
+_site
+.DS_Store
+venv

@@ -6,17 +6,19 @@ builds = love/platform/macosx/build/Release
 framework = love/platform/macosx/build/Release/love.framework
 app = love/platform/macosx/build/Release/love.app
 
-app_zip = builds/$(date)-osx-app.zip
-framework_zip = builds/$(date)-osx-framework.zip
+app_zip = builds/$(date)/$(date)-osx-app.zip
+framework_zip = builds/$(date)/$(date)-osx-framework.zip
 
 releases: $(app_zip) $(framework_zip)
 
 $(app_zip): $(app)
 	rm -f $@
+	mkdir -p builds/$(date)
 	cd $(builds) && zip -q ../../../../../$@ love.app
 
 $(framework_zip): $(framework)
 	rm -f $@
+	mkdir -p builds/$(date)
 	cd $(builds) && zip -q ../../../../../$@ love.framework
 
 clean:
