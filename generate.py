@@ -4,7 +4,7 @@ import codecs
 
 
 def url(date, binary):
-    return "/builds/{0}/{0}-{1}.zip".format(date, binary)
+    return "builds/{0}/{0}-{1}.zip".format(date, binary)
 
 
 def main():
