@@ -14,12 +14,12 @@ releases: $(app_zip) $(framework_zip)
 $(app_zip): $(app)
 	rm -f $@
 	mkdir -p builds/$(date)
-	cd $(builds) && zip -r -q ../../../../../$@ love.app
+	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.app
 
 $(framework_zip): $(framework)
 	rm -f $@
 	mkdir -p builds/$(date)
-	cd $(builds) && zip -r -q ../../../../../$@ love.framework
+	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.framework
 
 clean:
 	rm -rf love/platform/macosx/build/Release/love.framework
