@@ -1,24 +1,22 @@
 .PHONY: nightly clean refresh
 
-date = $(shell date +%Y-%m-%d)
-
 builds = love/platform/macosx/build/Release
 framework = love/platform/macosx/build/Release/love.framework
 app = love/platform/macosx/build/Release/love.app
 
-app_zip = builds/$(date)/$(date)-osx-app.zip
-framework_zip = builds/$(date)/$(date)-osx-framework.zip
+app_zip = builds/osx-app.zip
+framework_zip = builds/osx-framework.zip
 
 releases: refresh $(app_zip) $(framework_zip)
 
 $(app_zip): $(app)
 	rm -f $@
-	mkdir -p builds/$(date)
+	mkdir -p builds
 	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.app
 
 $(framework_zip): $(framework)
 	rm -f $@
-	mkdir -p builds/$(date)
+	mkdir -p builds
 	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.framework
 
 clean:
