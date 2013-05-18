@@ -3,29 +3,23 @@
 builds = love/platform/macosx/build/Release
 framework = love/platform/macosx/build/Release/love.framework
 app = love/platform/macosx/build/Release/love.app
+win32 = love/platform/msvc2010/bin/x86/Release/MD/love.exe
 
 app_zip = builds/love-nightly-macosx-ub.zip
-framework_zip = builds/liblove-nightly-macosx-ub.zip
 win32_zip = builds/love-nightly-win-x86.zip
 win64_zip = builds/love-nightly-win-x64.zip
 
-releases: refresh $(app_zip) $(framework_zip)
+releases: refresh $(app_zip) $(win32_zip)
 
 $(app_zip): $(app)
 	rm -f $@
-	mkdir -p builds
 	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.app
 
-$(framework_zip): $(framework)
-	rm -f $@
-	mkdir -p builds
-	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.framework
-
-$(win32_zip): $(framework)
-	rm -f $@
-	mkdir -p builds
-	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.framework
-
+$(win32_zip): $(win32)
+	rm -rf $@ win32
+	mkdir -p win32
+	cp -r love/platform/msvc2010/bin/x86/Release/MD win32/love
+	cd win32 && zip -r -q ../$@ love -x "*.pdb" -x "*.lib" -x "*.exp"
 
 clean:
 	rm -rf love/platform/macosx/build/Release/love.framework
