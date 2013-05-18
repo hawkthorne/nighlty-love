@@ -9,7 +9,7 @@ app = love/platform/macosx/build/Release/love.app
 app_zip = builds/$(date)/$(date)-osx-app.zip
 framework_zip = builds/$(date)/$(date)-osx-framework.zip
 
-releases: $(app_zip) $(framework_zip)
+releases: refresh $(app_zip) $(framework_zip)
 
 $(app_zip): $(app)
 	rm -f $@
@@ -39,5 +39,3 @@ $(app): $(framework) love/src
 
 love/src:
 	hg clone ssh://hg@bitbucket.org/rude/love
-
-

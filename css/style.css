@@ -1,0 +1,134 @@
+body {
+  font-family: 'Helvetica', sans-serif;
+  background-color: #000000;
+  background-image: url("../images/stars_small.png"), url("../images/stars_medium.png"), url("../images/stars_large.png");
+}
+
+
+@keyframes onastring {
+  from {
+    transform: rotate(-10deg);
+  }
+ 
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+#moon {
+  width: 25%;
+  animation-duration: 3s;
+  animation-name: onastring;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+#logo {
+  width: 55%;
+}
+
+#wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+#downloads {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#moon, #logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+li a {
+  font-size: 1.1em;
+  background:  url("../images/icon-arrow.png") no-repeat scroll right 50%;
+  width: 180px;
+  line-height: 20px;
+  display: inline-block;
+  height: 40px;
+  text-decoration: none;
+  color: #FFF;
+  margin-left: 45px;
+}
+
+small {
+  display: block;
+}
+
+ul {
+  margin: 10px;
+  padding: 0;
+  display: inline-block;
+  width: 242px;
+}
+
+hr {
+  width: 75%;
+  height: 0;
+  border-width: 1px 0 0 0;
+  border-style: dotted;
+  border-color: rgba(100, 47, 158, 0.5);
+}
+
+p {
+  color: rgb(240, 243, 239);
+  text-align: center;
+  width: 75%;
+  text-align: left;
+  margin: 10px auto;
+}
+
+li {
+  text-align: left;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: rgba(100, 47, 158, 0.5);
+}
+
+li.osx {
+  background-image: url('../images/icon-mac.png');
+  background-repeat: no-repeat;
+  background-position: center left 10px;
+}
+
+li.windows {
+  background-image: url('../images/icon-windows.png');
+  background-repeat: no-repeat;
+  background-position: center left 10px;
+}
+
+li.linux {
+  background-image: url('../images/icon-linux.png');
+  background-repeat: no-repeat;
+  background-position: center left 10px;
+}
+
+li.disabled {
+  background-color: rgba(100, 47, 158, 0.2) !important;
+}
+
+li.disabled a {
+  background: transparent;
+}
+
+
+header {
+  margin: 30px 10px;
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  color: #222;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  font-style: italic;
+}

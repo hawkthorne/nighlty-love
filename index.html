@@ -1,30 +1,62 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Nightly LÖVE</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-    <h1>Nightly LÖVE</h1>
-    <ul>
-    
-      <li>
-        <span>LOVE Nightly builds for 2013-05-16</span>
-        <ul class="executables">
-          <li>
-            <a href="builds/2013-05-16/2013-05-16-osx-app.zip">
-              <img src="images/osx-app.png" alt="love.app" />
+    <div id="wrapper">
+      <header>
+        <img id="moon" src="images/moon.png" />
+        <img id="logo" src="images/logo.png" />
+      </header>
+      <p>
+        Hi there! <a href="http://love2d.org">LÖVE</a> is an <strong>*awesome*</strong> framework you can use to make 2D games in Lua. It's free, open-source, and works on Windows, Mac OS X and Linux.
+      </p>
+      <p>
+        These nightly builds should only be used for testing, they may be unstable. Sweet dreams!
+      </p>
+      <div id="downloads">
+        <ul>
+          <li class="windows disabled">
+            <a>
+              love.exe (32-bit)<small>coming soon</small>
+            </a>
+          </li>
+          <li class="windows disabled">
+            <a>
+              love.exe (64-bit)<small>coming soon</small>
+            </a>
+          </li>
+          <li class="osx">
+            <a href="builds/osx-app.zip">
+              love.app<small>5.7MB | zip</small>
             </a>
           </li>
         </ul>
-        <ul class="liblove">
-          <li>
-            <a href="builds/2013-05-16/2013-05-16-osx-framework.zip">
-              <img src="images/osx-framework.png" alt="love.framework" />
+        <ul>
+          <li class="windows disabled">
+            <a>
+              liblove.dll<small>coming soon</small>
+            </a>
+          </li>
+          <li class="osx">
+            <a>
+              liblove.framework<small>1.7MB | zip</small>
+            </a>
+          </li>
+          <li class="linux disabled">
+            <a>
+              liblove.so<small>coming soon</small>
             </a>
           </li>
         </ul>
-      </li>
-    
-    </ul>
-  </body>
+      </div>
+    </section>
+    <footer>
+      Creative Commons Attribution Share-Alike License v3.0 or any later version.
+    </footer>
+  </div>
+</body>
 </html>
