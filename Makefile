@@ -4,8 +4,10 @@ builds = love/platform/macosx/build/Release
 framework = love/platform/macosx/build/Release/love.framework
 app = love/platform/macosx/build/Release/love.app
 
-app_zip = builds/osx-app.zip
-framework_zip = builds/osx-framework.zip
+app_zip = builds/love-nightly-macosx-ub.zip
+framework_zip = builds/liblove-nightly-macosx-ub.zip
+win32_zip = builds/love-nightly-win-x86.zip
+win64_zip = builds/love-nightly-win-x64.zip
 
 releases: refresh $(app_zip) $(framework_zip)
 
@@ -18,6 +20,12 @@ $(framework_zip): $(framework)
 	rm -f $@
 	mkdir -p builds
 	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.framework
+
+$(win32_zip): $(framework)
+	rm -f $@
+	mkdir -p builds
+	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.framework
+
 
 clean:
 	rm -rf love/platform/macosx/build/Release/love.framework
