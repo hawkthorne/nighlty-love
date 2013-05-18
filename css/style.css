@@ -89,25 +89,26 @@ li {
   margin: 10px;
   border-radius: 10px;
   background-color: rgba(100, 47, 158, 0.5);
+  background-repeat: no-repeat;
+  background-position: center left 10px;
 }
 
 li.osx {
   background-image: url('../images/icon-mac.png');
-  background-repeat: no-repeat;
-  background-position: center left 10px;
 }
 
 li.windows {
   background-image: url('../images/icon-windows.png');
-  background-repeat: no-repeat;
-  background-position: center left 10px;
 }
 
 li.linux {
   background-image: url('../images/icon-linux.png');
-  background-repeat: no-repeat;
-  background-position: center left 10px;
 }
+
+li.arch {
+  background-image: url('../images/icon-arch.png');
+}
+
 
 li.disabled {
   background-color: rgba(100, 47, 158, 0.2) !important;
