@@ -32,15 +32,15 @@ clean:
 	rm -rf love/platform/macosx/build/Release/love.framework
 	rm -rf love/platform/macosx/build/Release/love.app
 
-refresh: love/src
+refresh: love/src/*
 	cd love && hg pull && hg update
 
-$(framework): love/src
+$(framework): love/src/*
 	xcodebuild -project love/platform/macosx/love-framework.xcodeproj/ \
 		-target Framework -configuration Release > /dev/null
 
 
-$(app): $(framework) love/src
+$(app): $(framework) love/src/*
 	xcodebuild -project love/platform/macosx/love.xcodeproj/ \
 		-target love -configuration Release > /dev/null
 
