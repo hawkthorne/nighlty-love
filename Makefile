@@ -14,7 +14,7 @@ releases: refresh $(app_zip) $(win32_zip) $(win64_zip)
 
 $(app_zip): $(app)
 	rm -f $@
-	cd $(builds) && zip --symlinks -r -q ../../../../../$@ love.app
+	ditto -c -k --sequesterRsrc --keepParent $< $@
 
 $(win32_zip): $(win32)
 	rm -rf $@ win32
@@ -29,8 +29,9 @@ $(win64_zip): $(win64)
 	cd win64 && zip -r -q ../$@ love -x "*.pdb" -x "*.lib" -x "*.exp"
 
 clean:
-	rm -rf love/platform/macosx/build/Release/love.framework
-	rm -rf love/platform/macosx/build/Release/love.app
+	rm -rf $(app_zip)
+	rm -rf $(win32_zip)
+	rm -rf $(win64_zip)
 
 refresh: love/src/*
 	cd love && hg pull && hg update
