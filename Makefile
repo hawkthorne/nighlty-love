@@ -32,6 +32,9 @@ clean:
 	rm -rf $(app_zip)
 	rm -rf $(win32_zip)
 	rm -rf $(win64_zip)
+	rm -rf $(app)
+	rm -rf $(win32)
+	rm -rf $(win64)
 
 refresh: love/src/*
 	cd love && hg pull && hg update
